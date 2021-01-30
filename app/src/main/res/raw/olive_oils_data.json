@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Chili",
+    "imageFile": "chili_bottle",
+    "description": "Dare to liven up your food with this spicy, mildly hot flavor-booster. Enhance seafood, chicken, roasted vegetables, or authentic Mexican cuisine with this bold creation.",
+    "size": 500,
+    "price": 26.0
+  },
+  {
+    "name": "Basil",
+    "imageFile": "basil_bottle",
+    "description": "Behold this wonderfully aromatic oil accented with the fragrance and taste of freshly picked sweet basil. An Italian masterpiece, perfect for drizzling on pasta or over a fresh plate of tomatoes and mozzarella.",
+    "size": 500,
+    "price": 26.0
+  },
+  {
+    "name": "Lemon",
+    "imageFile": "lemon_bottle",
+    "description": "Enjoy a lemony zing coupled with a mild sweetness, all imparted by the humble Meyer lemon. Try making hummus with this and you’ll never buy store-bought again.",
+    "size": 500,
+    "price": 26.0
+  },
+  {
+    "name": "Bold",
+    "imageFile": "bold_bottle",
+    "description": "A striking olive oil with an intense pepperiness that balances well with its enticing fruitiness. Slather this on grilled or roasted meats or drizzle on soups, pastas, and tomato dishes for a truly memorable experience.",
+    "size": 500,
+    "price": 24.50
+  },
+  {
+    "name": "Delicate",
+    "imageFile": "delicate_bottle",
+    "description": "When you need an olive oil that’s smooth and buttery, with zero bitterness, and an ever-so-light peppery flavor. An excellent substitute for butter, and ideal for baking and seafood.",
+    "size": 500,
+    "price": 24.50
+  }
+]
