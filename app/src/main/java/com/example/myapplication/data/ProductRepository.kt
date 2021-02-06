@@ -10,4 +10,10 @@ class ProductRepository {
                 .use { it.readText() }
     }
 
+    fun getTextFromAsset(context: Context, fileName: String): String {
+        return context.resources.assets.open(fileName)
+            .bufferedReader()
+            .use { it.readText() }
+    }
+
 }

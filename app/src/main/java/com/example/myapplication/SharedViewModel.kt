@@ -16,7 +16,7 @@ class SharedViewModel(app: Application) : AndroidViewModel(app) {
     var productRepository: ProductRepository = ProductRepository()
 
     init {
-        val data = productRepository.getTextFromResource(app, R.raw.olive_oils_data)
+        val data = productRepository.getTextFromAsset(app, "olive_oils_data.json")
         Log.i("two_trees_oil", data)
     }
 
