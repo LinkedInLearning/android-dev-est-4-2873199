@@ -5,7 +5,6 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.example.myapplication.data.ProductRepository
 
 class SharedViewModel(app: Application) : AndroidViewModel(app) {
@@ -16,8 +15,10 @@ class SharedViewModel(app: Application) : AndroidViewModel(app) {
     var productRepository: ProductRepository = ProductRepository()
 
     init {
-        val data = productRepository.getTextFromAsset(app, "olive_oils_data.json")
-        Log.i("two_trees_oil", data)
+        val data = productRepository.getProducts(app, "olive_oils_data.json")
+        data?.forEach {
+            Log.i("two_trees_oil", "Product: ${it.name}")
+        }
     }
 
     fun increaseQuantity() {
