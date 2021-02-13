@@ -51,9 +51,9 @@ class StocksFragment : Fragment() {
         }
         binding.stockInfoText.text = getString(
             R.string.stock_info,
-            //open,
-            //close,
-            //change
+            stock.open,
+            stock.close,
+            stock.change
         )
     }
 
