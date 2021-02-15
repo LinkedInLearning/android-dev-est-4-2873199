@@ -15,7 +15,7 @@ class ToursFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentToursBinding.inflate(inflater, container, false)
         return binding.root
     }

@@ -12,11 +12,11 @@ class SharedViewModel(app: Application) : AndroidViewModel(app) {
     private val _quantity: MutableLiveData<Int> = MutableLiveData(0)
     val quantity: LiveData<Int> = _quantity
 
-    var productRepository: ProductRepository = ProductRepository(app)
+    var productRepository: ProductRepository = ProductRepository()
 
     init {
-        val data = productRepository.products
-        data.forEach {
+        val data = productRepository.getProducts(app)
+        data?.forEach {
             Log.i("two_trees_oil", "Product: ${it.name}")
         }
     }
