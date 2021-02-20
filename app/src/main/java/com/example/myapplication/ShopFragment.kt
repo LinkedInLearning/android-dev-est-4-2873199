@@ -28,6 +28,15 @@ class ShopFragment : Fragment() {
             ViewModelProvider(this)[SharedViewModel::class.java]
         }
 
+        viewModel?.products?.observe(viewLifecycleOwner, { products ->
+            val productNames = StringBuilder()
+            products.forEach {
+                productNames.appendLine(it.name)
+            }
+
+            binding.cartContentText.text = productNames.toString()
+        })
+
         binding.addQuantityButton.setOnClickListener { viewModel?.increaseQuantity() }
         binding.removeQuantityButton.setOnClickListener { viewModel?.decreaseQuantity() }
     }
