@@ -22,6 +22,10 @@ class ProductRepository {
             .build()
     }
 
+    private val productApi: ProductApi by lazy {
+        retrofit.create(ProductApi::class.java)
+    }
+
     private fun getTextFromResource(context: Context): String {
         return context.resources.openRawResource(R.raw.olive_oils_data)
                 .bufferedReader()
