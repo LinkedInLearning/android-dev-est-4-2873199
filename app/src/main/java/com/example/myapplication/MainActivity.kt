@@ -36,9 +36,6 @@ class MainActivity : FragmentActivity() {
         }
 
         val viewModel = ViewModelProvider(this)[SharedViewModel::class.java]
-        viewModel.quantity.observe(this) {
-            updateBadge(it)
-        }
     }
 
     private fun updateBadge(count: Int) {

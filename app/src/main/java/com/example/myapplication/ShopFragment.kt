@@ -36,9 +36,6 @@ class ShopFragment : Fragment() {
 
             binding.cartContentText.text = productNames.toString()
         })
-
-        binding.addQuantityButton.setOnClickListener { viewModel?.increaseQuantity() }
-        binding.removeQuantityButton.setOnClickListener { viewModel?.decreaseQuantity() }
     }
 
     override fun onDestroyView() {
