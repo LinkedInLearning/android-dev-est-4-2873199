@@ -33,50 +33,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cartImage" />
 
-    <Button
-        android:id="@+id/remove_quantity_button"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="48dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
-        android:backgroundTint="@color/colorAccent"
-        android:text="-"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@android:color/white"
-        app:layout_constraintEnd_toStartOf="@+id/add_quantity_button"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cartContentText" />
-
-    <Button
-        android:id="@+id/add_quantity_button"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="48dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="@color/colorAccent"
-        android:text="+"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/remove_quantity_button"
-        app:layout_constraintTop_toBottomOf="@+id/cartContentText" />
-
-    <TextView
-        android:id="@+id/cartContentText"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/productList"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:gravity="center_horizontal"
-        android:lineSpacingExtra="12sp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="16sp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cartHeaderText" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

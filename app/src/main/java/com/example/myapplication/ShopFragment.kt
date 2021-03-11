@@ -29,12 +29,7 @@ class ShopFragment : Fragment() {
         }
 
         viewModel?.products?.observe(viewLifecycleOwner, { products ->
-            val productNames = StringBuilder()
-            products.forEach {
-                productNames.appendLine(it.name)
-            }
 
-            binding.cartContentText.text = productNames.toString()
         })
     }
 
