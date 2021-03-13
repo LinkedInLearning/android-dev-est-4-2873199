@@ -44,6 +44,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cartHeaderText" />
+        app:layout_constraintTop_toBottomOf="@+id/cartHeaderText"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        tools:listitem="@layout/product_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
