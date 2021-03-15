@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.icu.text.NumberFormat
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -23,7 +24,16 @@ class ProductAdapter(private val items: List<Product>)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val product = items[position]
+
+        with(holder.binding) {
+            productNameText.text = product.name
+            sizeText.text = sizeText.context.resources.getString(
+                R.string.product_size_label,
+                product.size
+            )
+            priceText.text = NumberFormat.getCurrencyInstance().format(product.price)
+        }
     }
 
     override fun getItemCount(): Int = items.size

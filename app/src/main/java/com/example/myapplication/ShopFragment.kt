@@ -29,7 +29,7 @@ class ShopFragment : Fragment() {
         }
 
         viewModel?.products?.observe(viewLifecycleOwner, { products ->
-
+            binding.productList.adapter = ProductAdapter(products)
         })
     }
 
