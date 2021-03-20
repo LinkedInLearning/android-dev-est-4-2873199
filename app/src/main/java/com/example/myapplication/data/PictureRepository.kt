@@ -5,9 +5,9 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-const val BASE_ENDPOINT_URL = "https://2873199.youcanlearnit.net/"
+const val BASE_ENDPOINT_URL = "https://picsum.photos/"
 
-class ProductRepository {
+class PictureRepository {
 
     private val retrofit: Retrofit by lazy {
         val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
@@ -18,16 +18,15 @@ class ProductRepository {
             .build()
     }
 
-    private val productApi: ProductApi by lazy {
-        retrofit.create(ProductApi::class.java)
+    private val pictureApi: PictureApi by lazy {
+        retrofit.create(PictureApi::class.java)
     }
 
-    suspend fun getProducts(): List<Product> {
-        val response = productApi.getProducts()
+    suspend fun getProducts(page: Int): List<Picture> {
+        val response = pictureApi.getPictures(page)
         return if (response.isSuccessful)
             response.body() ?: emptyList()
         else
             emptyList()
     }
-
 }

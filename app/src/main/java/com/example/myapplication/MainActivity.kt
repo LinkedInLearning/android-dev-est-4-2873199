@@ -1,15 +1,16 @@
 package com.example.myapplication
 
 import android.os.Bundle
-import androidx.fragment.app.FragmentActivity
-import androidx.fragment.app.add
-import androidx.fragment.app.commit
-import androidx.fragment.app.replace
-import androidx.lifecycle.ViewModelProvider
+import android.util.Log
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.databinding.ActivityMainBinding
 
-class MainActivity : FragmentActivity() {
+const val LOG_TAG = "RandomPics"
 
+class MainActivity : AppCompatActivity() {
+
+    private val viewModel by viewModels<MainViewModel>()
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,60 +18,14 @@ class MainActivity : FragmentActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        if (savedInstanceState != null) return
-
-        supportFragmentManager.commit {
-            add<HomeFragment>(R.id.container, null)
+        binding.pickRandomImagesButton.setOnClickListener {
+            viewModel.showRandomImage()
         }
 
-        binding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
-            when(item.itemId) {
-                R.id.action_home -> goToHome()
-
-                R.id.action_tours -> goToTours()
-
-                R.id.action_shop -> goToShop()
-
-                else -> false
-            }
-        }
-
-        val viewModel = ViewModelProvider(this)[SharedViewModel::class.java]
-    }
-
-    private fun updateBadge(count: Int) {
-        val badge = binding.bottomNavigation.getOrCreateBadge(R.id.action_shop)
-        if (count > 0) {
-            badge.number = count
-            badge.isVisible = true
-        } else {
-            badge.clearNumber()
-            badge.isVisible = false
+        viewModel.pictures.observe(this) {
+            val pictureAdapter = PictureAdapter(it)
+            binding.picturesList.adapter = pictureAdapter
+            Log.i(LOG_TAG, "received list of pictures: $it")
         }
     }
-
-    private fun goToShop(): Boolean {
-        supportFragmentManager.commit {
-            replace<ShopFragment>(R.id.container, null, null)
-        }
-
-        return true
-    }
-
-    private fun goToTours(): Boolean {
-        supportFragmentManager.commit {
-            replace<ToursFragment>(R.id.container, null, null)
-        }
-
-        return true
-    }
-
-    private fun goToHome(): Boolean {
-        supportFragmentManager.commit {
-            replace<HomeFragment>(R.id.container, null, null)
-        }
-
-        return true
-    }
-
 }
