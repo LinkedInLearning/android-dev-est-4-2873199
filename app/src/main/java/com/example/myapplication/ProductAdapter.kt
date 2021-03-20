@@ -4,6 +4,7 @@ import android.icu.text.NumberFormat
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.example.myapplication.data.Product
 import com.example.myapplication.databinding.ProductItemBinding
 
@@ -27,6 +28,9 @@ class ProductAdapter(private val items: List<Product>)
         val product = items[position]
 
         with(holder.binding) {
+            productImage.load(product.imageFile) {
+                crossfade(1000)
+            }
             productNameText.text = product.name
             sizeText.text = sizeText.context.resources.getString(
                 R.string.product_size_label,
