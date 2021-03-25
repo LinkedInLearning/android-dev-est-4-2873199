@@ -14,26 +14,12 @@ class PictureAdapter(private val items: List<Picture>)
             : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(
-            PictureItemBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent,
-                false
-            )
-        )
+        TODO()
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val picture = items[position]
-
-        with(holder.binding) {
-            pictureImage.load(picture.thumbnailUrl) {
-                crossfade(true)
-            }
-            nameText.text = picture.name
-            jobText.text = picture.job
-        }
+        TODO()
     }
 
-    override fun getItemCount(): Int = items.size
+    override fun getItemCount(): Int = TODO()
 }
