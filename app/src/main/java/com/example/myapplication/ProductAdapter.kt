@@ -29,7 +29,7 @@ class ProductAdapter(private val items: List<Product>)
 
         with(holder.binding) {
             productImage.load(product.imageFile) {
-                crossfade(1000)
+                crossfade(true)
             }
             productNameText.text = product.name
             sizeText.text = sizeText.context.resources.getString(

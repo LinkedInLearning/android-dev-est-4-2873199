@@ -10,6 +10,7 @@ import com.example.myapplication.databinding.FragmentShopBinding
 
 class ShopFragment : Fragment() {
 
+    private var viewModel: SharedViewModel? = null
     private var _binding: FragmentShopBinding? = null
     private val binding get() = _binding!!
 
@@ -24,8 +25,8 @@ class ShopFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val viewModel = activity?.run {
-            ViewModelProvider(this)[SharedViewModel::class.java]
+        viewModel = activity?.run {
+            ViewModelProvider(requireActivity())[SharedViewModel::class.java]
         }
 
         viewModel?.products?.observe(viewLifecycleOwner, { products ->

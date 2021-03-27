@@ -8,6 +8,8 @@ import androidx.fragment.app.replace
 import androidx.lifecycle.ViewModelProvider
 import com.example.myapplication.databinding.ActivityMainBinding
 
+const val LOG_TAG = "two_trees_oil"
+
 class MainActivity : FragmentActivity() {
 
     private lateinit var binding: ActivityMainBinding

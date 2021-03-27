@@ -1,13 +1,10 @@
 package com.example.myapplication
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.liveData
+import androidx.lifecycle.*
 import com.example.myapplication.data.Product
 import com.example.myapplication.data.ProductRepository
 
-class SharedViewModel(app: Application) : AndroidViewModel(app) {
+class SharedViewModel : ViewModel() {
 
     var productRepository: ProductRepository = ProductRepository()
 
