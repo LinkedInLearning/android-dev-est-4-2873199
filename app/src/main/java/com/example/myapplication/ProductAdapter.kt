@@ -8,7 +8,7 @@ import coil.load
 import com.example.myapplication.data.Product
 import com.example.myapplication.databinding.ProductItemBinding
 
-class ProductAdapter(private val items: List<Product>)
+class ProductAdapter(private val items: List<Product>, private val onItemClick: (Product) -> Unit)
     : RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
 
         inner class ViewHolder(val binding: ProductItemBinding)
@@ -37,6 +37,10 @@ class ProductAdapter(private val items: List<Product>)
                 product.size
             )
             priceText.text = NumberFormat.getCurrencyInstance().format(product.price)
+        }
+
+        holder.itemView.setOnClickListener {
+            onItemClick(product)
         }
     }
 
