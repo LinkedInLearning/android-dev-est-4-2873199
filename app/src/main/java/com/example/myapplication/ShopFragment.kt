@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.myapplication.data.Product
 import com.example.myapplication.databinding.FragmentShopBinding
 
@@ -18,6 +19,7 @@ class ShopFragment : Fragment() {
 
     private val onItemClick: (Product) -> Unit = { product ->
         Log.i(LOG_TAG, "the selected product: $product")
+        findNavController().navigate(R.id.action_shopFragment_to_detailFragment)
     }
 
     override fun onCreateView(

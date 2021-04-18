@@ -6,6 +6,9 @@ import androidx.fragment.app.add
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavHost
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.example.myapplication.databinding.ActivityMainBinding
 
 const val LOG_TAG = "two_trees_oil"
@@ -21,21 +24,9 @@ class MainActivity : FragmentActivity() {
 
         if (savedInstanceState != null) return
 
-        supportFragmentManager.commit {
-            add<HomeFragment>(R.id.container, null)
-        }
-
-        binding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
-            when(item.itemId) {
-                R.id.action_home -> goToHome()
-
-                R.id.action_tours -> goToTours()
-
-                R.id.action_shop -> goToShop()
-
-                else -> false
-            }
-        }
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.container) as NavHostFragment
+        val navController = navHostFragment.navController
+        binding.bottomNavigation.setupWithNavController(navController)
 
         val viewModel = ViewModelProvider(this)[SharedViewModel::class.java]
     }
@@ -49,30 +40,6 @@ class MainActivity : FragmentActivity() {
             badge.clearNumber()
             badge.isVisible = false
         }
-    }
-
-    private fun goToShop(): Boolean {
-        supportFragmentManager.commit {
-            replace<ShopFragment>(R.id.container, null, null)
-        }
-
-        return true
-    }
-
-    private fun goToTours(): Boolean {
-        supportFragmentManager.commit {
-            replace<ToursFragment>(R.id.container, null, null)
-        }
-
-        return true
-    }
-
-    private fun goToHome(): Boolean {
-        supportFragmentManager.commit {
-            replace<HomeFragment>(R.id.container, null, null)
-        }
-
-        return true
     }
 
 }
