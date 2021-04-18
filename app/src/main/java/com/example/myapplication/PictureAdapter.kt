@@ -37,6 +37,10 @@ class PictureAdapter(private val items: List<Picture>, private val onItemClick: 
         holder.itemView.setOnClickListener {
             onItemClick(picture)
         }
+
+        holder.itemView.setOnClickListener {
+            onItemClick(picture)
+        }
     }
 
     override fun getItemCount(): Int = items.size
