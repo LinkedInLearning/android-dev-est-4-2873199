@@ -21,7 +21,7 @@ class MainFragment : Fragment() {
 
     private val onItemClick: (Picture) -> Unit = { picture ->
         viewModel?.selectedPicture?.value = picture
-        findNavController().navigate(R.id.action_mainFragment_to_detailFragment)
+        TODO("handle navigation")
     }
 
     override fun onCreateView(
