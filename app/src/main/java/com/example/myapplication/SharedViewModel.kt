@@ -6,10 +6,12 @@ import com.example.myapplication.data.Picture
 import com.example.myapplication.data.PictureRepository
 import kotlin.random.Random
 
-class MainViewModel : ViewModel() {
+class SharedViewModel : ViewModel() {
 
     var pictureRepository: PictureRepository = PictureRepository()
     private val randomPageNumber: MutableLiveData<Int> = MutableLiveData()
+
+    val selectedPicture: MutableLiveData<Picture> = MutableLiveData()
 
     val pictures: LiveData<List<Picture>> = randomPageNumber.switchMap {
         liveData {
