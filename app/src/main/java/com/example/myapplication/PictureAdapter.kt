@@ -7,7 +7,7 @@ import coil.load
 import com.example.myapplication.data.Picture
 import com.example.myapplication.databinding.PictureItemBinding
 
-class PictureAdapter(private val items: List<Picture>)
+class PictureAdapter(private val items: List<Picture>, private val onItemClick: (Picture) -> Unit)
     : RecyclerView.Adapter<PictureAdapter.ViewHolder>() {
 
         inner class ViewHolder(val binding: PictureItemBinding)
@@ -32,6 +32,10 @@ class PictureAdapter(private val items: List<Picture>)
             }
             authorNameText.text = picture.author
             urlText.text = picture.url
+        }
+
+        holder.itemView.setOnClickListener {
+            onItemClick(picture)
         }
     }
 
