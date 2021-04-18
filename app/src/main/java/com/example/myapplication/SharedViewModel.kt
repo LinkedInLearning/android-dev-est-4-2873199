@@ -8,6 +8,8 @@ class SharedViewModel : ViewModel() {
 
     var productRepository: ProductRepository = ProductRepository()
 
+    val selectedProduct: MutableLiveData<Product> = MutableLiveData()
+
     val products: LiveData<List<Product>> = liveData {
         val data = productRepository.getProducts()
         emit(data)

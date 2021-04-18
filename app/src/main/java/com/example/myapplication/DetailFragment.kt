@@ -31,8 +31,8 @@ class DetailFragment : Fragment() {
             ViewModelProvider(requireActivity())[SharedViewModel::class.java]
         }
 
-        viewModel?.products?.observe(viewLifecycleOwner, { products ->
-           with(products[0]) {
+        viewModel?.selectedProduct?.observe(viewLifecycleOwner, { product ->
+           with(product) {
                binding.productImage.load(imageFile)
                binding.productNameText.text = name
                binding.descriptionText.text = description

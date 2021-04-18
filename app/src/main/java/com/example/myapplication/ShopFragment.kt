@@ -19,6 +19,7 @@ class ShopFragment : Fragment() {
 
     private val onItemClick: (Product) -> Unit = { product ->
         Log.i(LOG_TAG, "the selected product: $product")
+        viewModel?.selectedProduct?.value = product
         findNavController().navigate(R.id.action_shopFragment_to_detailFragment)
     }
 
