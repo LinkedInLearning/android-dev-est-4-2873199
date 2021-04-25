@@ -20,6 +20,6 @@ class MainViewModel : ViewModel() {
     }
 
     fun showRandomImage() {
-        randomPageNumber.value = Random.nextInt(0, 10)
+        randomPageNumber.value = Random.nextInt(0, 3)
     }
 }

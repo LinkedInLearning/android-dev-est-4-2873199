@@ -20,7 +20,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/authorNameText"
+        android:id="@+id/nameText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -31,17 +31,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/pictureImage"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Roksolana Zasiadko" />
+        tools:text="Bello" />
 
     <TextView
-        android:id="@+id/urlText"
+        android:id="@+id/jobText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:autoLink="web"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/pictureImage"
-        app:layout_constraintTop_toBottomOf="@+id/authorNameText" />
+        app:layout_constraintTop_toBottomOf="@+id/nameText"
+        tools:text="Safety Inspector" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
