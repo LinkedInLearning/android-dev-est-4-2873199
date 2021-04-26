@@ -32,10 +32,11 @@ class DetailFragment : Fragment() {
 
         viewModel?.selectedPicture?.observe(viewLifecycleOwner, { picture ->
             with(picture) {
-                binding.pictureImage.load(imageUrl) {
+                binding.pictureImage.load(largeUrl) {
                     crossfade(true)
                 }
-                binding.authorNameText.text = author
+                binding.nameText.text = name
+                binding.jobText.text = job
             }
         })
     }
