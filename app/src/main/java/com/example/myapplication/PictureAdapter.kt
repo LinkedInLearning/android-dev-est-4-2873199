@@ -27,11 +27,15 @@ class PictureAdapter(private val items: List<Picture>, private val onItemClick: 
         val picture = items[position]
 
         with(holder.binding) {
-            pictureImage.load(picture.imageUrl) {
+            pictureImage.load(picture.thumbnailUrl) {
                 crossfade(true)
             }
-            authorNameText.text = picture.author
-            urlText.text = picture.url
+            nameText.text = picture.name
+            jobText.text = picture.job
+        }
+
+        holder.itemView.setOnClickListener {
+            onItemClick(picture)
         }
 
         holder.itemView.setOnClickListener {
