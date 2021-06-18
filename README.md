@@ -1,9 +1,10 @@
 # Android Development Essential Training: 4 Working with Data
-This is the repository for the LinkedIn Learning course `course-name`. The full course is available from [LinkedIn Learning][lil-course-url].
+This is the repository for the LinkedIn Learning course Android Development Essential Training: 4 Working with Data. The full course is available from [LinkedIn Learning][lil-course-url].
 
-![Android Development Essential Training: 4 Working with Data][lil-thumbnail-url]
+![Android Development Essential Training: 4 Working with Data][lil-thumbnail-url] 
 
-_See the readme file in the main branch for updated instructions and information._
+Do you develop Android apps? Are you wondering how to get started or wondering how to improve? This series of courses covers the essentials you must know to develop, design, and manage a native Android application. In this course, the fourth part in a four-part series, instructor Annyce Davis focuses on data, with hands-on challenges to check your understanding. Annyce explains the various types of data processing available in Android. She shows you how to package static data in JSON files, to make it easier to work with data in your application. Annyce steps through using LiveData objects, HTTP clients, a Retrofit interface, and more to get data from a web service. She discusses how you can use a RecyclerView to display different types of data in your app, then concludes by walking you through ways to display data that a user selects.
+
 ## Instructions
 This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
 
@@ -18,7 +19,7 @@ When switching from one exercise files branch to the next after making changes t
     Aborting
 
 To resolve this issue:
-
+	
     Add changes to git using this command: git add .
 	Commit changes using this command: git commit -m "some message"
 
@@ -27,16 +28,16 @@ To resolve this issue:
 	- Android Studio
 2. Clone this repository into your local machine using the terminal (Mac), CMD (Windows), or a GUI tool like SourceTree.
 
+
 ### Instructor
 
-**Annyce Davis**
-
+Annyce Davis 
+                            
 _Software Developer, Speaker, Author_
 
-Check out some of my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/annyce-davis?u=104).
+                            
 
-[0]: # (Replace these placeholder URLs with actual course URLs)
+Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/annyce-davis).
 
-[lil-course-url]: https://www.linkedin.com/learning/
-[lil-thumbnail-url]: http://
-
+[lil-course-url]: https://www.linkedin.com/learning/android-development-essential-training-4-working-with-data
+[lil-thumbnail-url]: https://cdn.lynda.com/course/2873199/2873199-1623865939368-16x9.jpg
